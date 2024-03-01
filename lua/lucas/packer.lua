@@ -8,4 +8,14 @@ return require('packer').startup(function(use)
 	'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  use({
+	'folke/tokyonight.nvim',
+	as = 'tokyonight',
+	config = function()
+		vim.cmd('colorscheme tokyonight')
+	end
+  })
+
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 end)
